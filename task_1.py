@@ -1,14 +1,23 @@
-list_numbers = [2, -93, -2, 8, -36, -44, -1, -85, -14, 90, -22, -90, -100, -8, 38, -92, -45, 67, 53, 25]
-i_max = 0
+def get_count_char(str_):
+    str1 = str_.lower()
+    alpha_list = list(str1)
 
-for i in range(len(list_numbers)):
-    max_a = list_numbers[i_max]
-    current_a = list_numbers[i]
-    if current_a > max_a:
-        i_max = i  # перебор, аналогичный представленному в теоретическом блоке
+    alphas_dict = {}
+    for alpha in alpha_list:
+        if alpha in alphas_dict:
+            alphas_dict[alpha] += 1
+        else:
+            alphas_dict[alpha] = 1
 
-a, b = max(list_numbers), list_numbers[-1]
-a, b = b, a
-list_numbers[-1], list_numbers[i_max] = b, a  # сама замена мест элементов списка
+    alphas_dict
+    print(alphas_dict)
 
-print(list_numbers)
+    ...  # TODO посчитать количество каждой буквы в строке в аргументе str_
+
+
+main_str = """
+    Данное предложение будет разбиваться на отдельные слова. 
+    В качестве разделителя для встроенного метода split будет выбран символ пробела. На выходе мы получим список отдельных слов. 
+    Далее нужно отсортировать слова в алфавитном порядке, а после сортировки склеить их с помощью метода строк join. Приступим!!!!
+"""
+print(get_count_char(main_str))
