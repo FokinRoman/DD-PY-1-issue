@@ -1,14 +1,14 @@
-salary = 5000  # зарплата
-spend = 6000  # траты
-months = 10  # количество месяцев
-increase = 0.03  # рост цен
-need_money = 0
-month = months  # сохраняю значение переменной в другой
-while months != 0:
+def delete(list_, index=None):
+    list1 = list_
+    if index == 0:
+        list1 = list_[1:]
+    elif index == None:
+        list1 = list_[:-1]
+    elif index > 0:
+        list1 = list_[0:index] + list_[index + 1:]
+    return list1  # TODO реализовать функцию удаления элемента из списка по индексу
 
-    need_money += spend
-    spend = spend * (1 + increase)
-    months -= 1
 
-need_money -= salary * month  # количество денег, чтобы прожить 10 месяцев
-print(round(need_money))
+print(delete([0, 0, 1, 2], index=0))  # [0, 1]
+print(delete([0, 1, 1, 2, 3], index=1))  # [0, 1, 2]
+print(delete([0, 1, 2, 3, 4, 4]))  # [0, 1, 2, 3]
